@@ -94,7 +94,7 @@ class LaneDetection:
             j_list = []
             for i in range(19, int(img.shape[1]/2) - 20, 5): #col left side
                 num_sum = np.sum(img[j - 19:j + 21, i - 19:i + 21]) #window size is 20*20
-                if num_sum > 100000: #pick i given j where its num_sum is over 100000
+                if num_sum > 40000: #pick i given j where its num_sum is over 40000
                     j_list.append(i)
             try:
                 len_list = []
@@ -118,7 +118,7 @@ class LaneDetection:
             j_list = []
             for i in range(int(img.shape[1]/2), img.shape[1] - 20, 5): #col right side
                 num_sum = np.sum(img[j - 19:j + 21, i - 19:i + 21]) #window size is 20*20
-                if num_sum > 100000: #pick i given j where its num_sum is over 100000
+                if num_sum > 40000: #pick i given j where its num_sum is over 40000
                     j_list.append(i)
             try:
                 len_list = []
